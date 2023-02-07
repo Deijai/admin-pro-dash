@@ -1,0 +1,33 @@
+<p>increment works!</p>
+<div class="input-group">
+  <span class="input-group-btn">
+    <button
+      [ngClass]="colorBtn"
+      [disabled]="progresso === 0"
+      type="button"
+      (click)="decrementProgress(1)"
+    >
+      <i class="fa fa-minus"></i>
+    </button>
+  </span>
+  <input
+    type="number"
+    class="form-control"
+    name="progresso"
+    [(ngModel)]="progresso"
+    (ngModelChange)="onChange($event)"
+    [disabled]="progresso === 100 || progresso === 0"
+    placeholder="Progresso"
+    value="progresso"
+  />
+  <span class="input-group-btn">
+    <button
+      [ngClass]="colorBtn"
+      [disabled]="progresso === 100"
+      type="button"
+      (click)="incrementProgress(1)"
+    >
+      <i class="fa fa-plus"></i>
+    </button>
+  </span>
+</div>
